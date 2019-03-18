@@ -1,0 +1,5 @@
+Cough <- Fatigue (50, 100)
+Fever <- Diarrhea (50, 80)
+Cough <- Diarrhea (50, 80)
+Fever <- Headache (60, 83.3333)
+Cough <-  (100, 80)

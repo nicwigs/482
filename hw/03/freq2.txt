@@ -1,0 +1,6 @@
+Fatigue Cough (50)
+Diarrhea Fever (40)
+Diarrhea Cough (40)
+Headache Fever (50)
+Headache Cough (40)
+Fever Cough (50)
