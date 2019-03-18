@@ -14459,7 +14459,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster</span> <span class="k">import</span> <span class="n">hierarchy</span>
@@ -14573,7 +14573,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wudf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">,</span><span class="s1">&#39;Iteration 1&#39;</span><span class="p">,</span><span class="s1">&#39;Iteration 2&#39;</span><span class="p">,</span><span class="s1">&#39;Iteration 3&#39;</span><span class="p">,</span><span class="s1">&#39;Iteration 4&#39;</span><span class="p">])</span>
@@ -14592,7 +14592,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test with example in lecture </span>
@@ -14611,15 +14611,15 @@ Cough &lt;-  (100, 80)
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="p">(</span><span class="n">wi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">)))</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="c1">#subtract wi and mu</span>
     <span class="n">t</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">missing</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1">#missing value needs to be 0</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>            <span class="c1">#divides by number of items rated by user</span>
-    <span class="n">m</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>            <span class="c1">#account for user that has missing value</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>            <span class="c1">#divides by number of items rated by user</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>            <span class="c1">#account for user that has missing value</span>
     <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>              <span class="c1">#Used for summation </span>
     <span class="n">wu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ones</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">m</span>
     
     <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="p">(</span><span class="n">wu</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span>
     <span class="n">t</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">missing</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">m</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">missing</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">wi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">ones</span><span class="p">,</span><span class="n">t</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">m</span>
 
@@ -14646,8 +14646,8 @@ Cough &lt;-  (100, 80)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>2.9130434782608696
-[ 0.28834609  0.12167943 -0.21165391  0.28834609  0.12167943 -0.41082998]
-[-0.72453818  0.08104299  0.08104299  0.08104299]
+[ 0.35434657  0.10434657 -0.39565343  0.35434657  0.10434657 -0.69564379]
+[-0.41739005  0.11594168  0.11594168  0.11594168]
 </pre>
 </div>
 </div>
@@ -14666,10 +14666,126 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wudf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>User</th>
+      <th>Iteration 1</th>
+      <th>Iteration 2</th>
+      <th>Iteration 3</th>
+      <th>Iteration 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.336957</td>
+      <td>0.353623</td>
+      <td>0.354318</td>
+      <td>0.354347</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0.086957</td>
+      <td>0.103623</td>
+      <td>0.104318</td>
+      <td>0.104347</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>-0.413043</td>
+      <td>-0.396377</td>
+      <td>-0.395682</td>
+      <td>-0.395653</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0.336957</td>
+      <td>0.353623</td>
+      <td>0.354318</td>
+      <td>0.354347</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0.086957</td>
+      <td>0.103623</td>
+      <td>0.104318</td>
+      <td>0.104347</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>-0.579710</td>
+      <td>-0.690821</td>
+      <td>-0.695451</td>
+      <td>-0.695644</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The item weights, $w_i$ after 4 iterations are shown below (fill in the table below for the weight of each item):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">widf</span>
 </pre></div>
 
     </div>
@@ -14715,151 +14831,35 @@ Cough &lt;-  (100, 80)
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0.224638</td>
-      <td>0.255233</td>
-      <td>0.271985</td>
-      <td>0.288346</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>0.057971</td>
-      <td>0.088567</td>
-      <td>0.105318</td>
-      <td>0.121679</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>-0.275362</td>
-      <td>-0.244767</td>
-      <td>-0.228015</td>
-      <td>-0.211654</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>0.224638</td>
-      <td>0.255233</td>
-      <td>0.271985</td>
-      <td>0.288346</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>0.057971</td>
-      <td>0.088567</td>
-      <td>0.105318</td>
-      <td>0.121679</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>-0.347826</td>
-      <td>-0.434783</td>
-      <td>-0.424879</td>
-      <td>-0.410830</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The item weights, $w_i$ after 4 iterations are shown below (fill in the table below for the weight of each item):</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">widf</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>User</th>
-      <th>Iteration 1</th>
-      <th>Iteration 2</th>
-      <th>Iteration 3</th>
-      <th>Iteration 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
       <td>Mozart</td>
-      <td>-0.618357</td>
-      <td>-0.669351</td>
-      <td>-0.697270</td>
-      <td>-0.724538</td>
+      <td>-0.400000</td>
+      <td>-0.416667</td>
+      <td>-0.417361</td>
+      <td>-0.417390</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Beethoven</td>
-      <td>0.144928</td>
-      <td>0.128422</td>
-      <td>0.105006</td>
-      <td>0.081043</td>
+      <td>0.111111</td>
+      <td>0.115741</td>
+      <td>0.115934</td>
+      <td>0.115942</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Ed Sheeran</td>
-      <td>0.144928</td>
-      <td>0.128422</td>
-      <td>0.105006</td>
-      <td>0.081043</td>
+      <td>0.111111</td>
+      <td>0.115741</td>
+      <td>0.115934</td>
+      <td>0.115942</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Taylor Swift</td>
-      <td>0.144928</td>
-      <td>0.128422</td>
-      <td>0.105006</td>
-      <td>0.081043</td>
+      <td>0.111111</td>
+      <td>0.115741</td>
+      <td>0.115934</td>
+      <td>0.115942</td>
     </tr>
   </tbody>
 </table>
@@ -14882,7 +14882,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mu</span>
@@ -14898,7 +14898,7 @@ Cough &lt;-  (100, 80)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -14924,7 +14924,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wudf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">widf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span>  <span class="n">mu</span>
@@ -14940,13 +14940,13 @@ Cough &lt;-  (100, 80)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.7776753237178848</pre>
+<pre>1.8000096450617284</pre>
 </div>
 
 </div>
@@ -14966,7 +14966,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cosSim</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
@@ -14981,7 +14981,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
@@ -14998,7 +14998,7 @@ Cough &lt;-  (100, 80)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -15018,7 +15018,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Similarity&#39;</span><span class="p">,</span><span class="s1">&#39;Mozart&#39;</span><span class="p">,</span><span class="s1">&#39;Beethoven&#39;</span><span class="p">,</span><span class="s1">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="s1">&#39;Taylor Swift&#39;</span><span class="p">])</span>
@@ -15044,7 +15044,7 @@ Cough &lt;-  (100, 80)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -15131,7 +15131,7 @@ Cough &lt;-  (100, 80)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># User 6 other ratings</span>
@@ -15151,7 +15151,7 @@ Cough &lt;-  (100, 80)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
