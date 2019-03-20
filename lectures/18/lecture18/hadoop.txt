@@ -1,0 +1,41 @@
+Hadoop is an open source, Java-based programming framework that supports 
+the processing and storage of extremely large data sets in a distributed 
+computing environment. It is part of the Apache project sponsored by the 
+Apache Software Foundation.
+
+Hadoop makes it possible to run applications on systems with thousands 
+of commodity hardware nodes, and to handle thousands of terabytes of 
+data. Its distributed file system facilitates rapid data transfer rates 
+among nodes and allows the system to continue operating in case of a 
+node failure. This approach lowers the risk of catastrophic system 
+failure and unexpected data loss, even if a significant number of nodes 
+become inoperative. Consequently, Hadoop quickly emerged as a foundation 
+for big data processing tasks, such as scientific analytics, business 
+and sales planning, and processing enormous volumes of sensor data, 
+including from internet of things sensors.
+
+Hadoop was created by computer scientists Doug Cutting and Mike 
+Cafarella in 2006 to support distribution for the Nutch search engine. 
+It was inspired by Google's MapReduce, a software framework in which an 
+application is broken down into numerous small parts. Any of these 
+parts, which are also called fragments or blocks, can be run on any node 
+in the cluster. After years of development within the open source 
+community, Hadoop 1.0 became publically available in November 2012 as 
+part of the Apache project sponsored by the Apache Software Foundation.
+
+Since its initial release, Hadoop has been continuously developed and 
+updated. The second iteration of Hadoop (Hadoop 2) improved resource 
+management and scheduling. It features a high-availability file-system 
+option and support for Microsoft Windows and other components to expand 
+the framework's versatility for data processing and analytics.
+
+Organizations can deploy Hadoop components and supporting software 
+packages in their local data center. However, most big data projects 
+depend on short-term use of substantial computing resources. This type 
+of usage is best-suited to highly scalable public cloud services, such 
+as Amazon Web Services (AWS), Google Cloud Platform and Microsoft Azure. 
+Public cloud providers often support Hadoop components through basic 
+services, such as AWS Elastic Compute Cloud and Simple Storage Service 
+instances. However, there are also services tailored specifically for 
+Hadoop-type tasks, such as AWS Elastic MapReduce, Google Cloud Dataproc 
+and Microsoft Azure HDInsight.
