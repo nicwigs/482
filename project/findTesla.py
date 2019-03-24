@@ -19,7 +19,9 @@ for i in range(100,300):
         for line in f:
             try:
                 c = json.loads(line)
-                if 'text' in c and keyword in str(c['text']).lower():
+                # first condition takes care of if tesla is in tweet
+                # second takes care of #tesla... or @tesla
+                if 'text' in c and any([(word == keyword) or (word[1:6] == keyword) for word in str(c['text']).lower().split()]):
                     testList.append({i: c[i] for i in ('created_at', 'text')})
             except ValueError:
                 pass
