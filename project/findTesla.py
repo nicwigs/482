@@ -13,7 +13,7 @@ for root, dirs, files in os.walk(directory):
 paths
 print(len(paths))
 
-for i in range(1000,2000):
+for i in range(2000,3000):
     print('file',i,'of',len(paths))
     with open(paths[i]) as f:
         for line in f:
