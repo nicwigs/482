@@ -1,0 +1,4 @@
+this is a document
+the document has few words
+this is a line in the document
+this line has only six words

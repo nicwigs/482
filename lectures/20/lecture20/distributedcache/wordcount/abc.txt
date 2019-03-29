@@ -1,0 +1,4 @@
+this is a cat
+that is a dog
+a cat is not a dog
+a dog chases a cat
