@@ -1,0 +1,4 @@
+This is a sample document.
+Each line has a separate sentence.
+This is the second last line.
+This is the last line.
