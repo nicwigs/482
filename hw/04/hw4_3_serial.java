@@ -9,16 +9,21 @@ class hw4_3_serial {
 		String line;
 
 		String attributes[] = {"preg","plas","pres","skin","insu","mass","pedi","age","class"};
+		//Text atts = new Text();
+		String atts;
 
 		while ((line = br.readLine()) != null){
 
 			String[] split = line.split(",");
 
 			for (int x=0; x<split.length -2; x++){
-				t = new String(attributes[x]+attributes[x+1]+split[x]+split[x+1]);
-			    System.out.println(t);
+		        for (int y=x+1; y<split.length-1; y++){
+		          atts = attributes[x]+","+attributes[y];
+		          System.out.println(atts);
+		        }
 			}
 
+			break;
 
 			//String delimiters = ",";
 			//StringTokenizer st = new StringTokenizer(line, delimiters);

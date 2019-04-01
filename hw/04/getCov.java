@@ -14,11 +14,11 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class getCov {
 
   public static class TokenizerMapper
-       extends Mapper<Object, Text, Text, DoubleWritable>{
+       extends Mapper<Object, Text, Text, Text>{
 
     String attributes[] = {"preg","plas","pres","skin","insu","mass","pedi","age","class"};
-    DoubleWritable val1 = new DoubleWritable(1.0);
-    private Text at1 = new Text();
+    private Text vals = new Text();
+    private Text atts = new Text();
 
 
     public void map(Object key, Text value, Context context
@@ -27,9 +27,11 @@ public class getCov {
       String[] line = value.toString().split(",");
 
       for (int x=0; x<line.length -2; x++){
-        val1.set(Double.parseDouble(line[x]));
-        at1.set(attributes[x]);
-        context.write(at1, val1 );
+        for (int y=x+1; y<line.length-1; y++){
+          vals.set(line[x]+","+line[y]);
+          atts.set(attributes[x]+","+attributes[y]);
+          context.write(atts, vals );
+        }
       }
     }
   }
@@ -44,7 +46,7 @@ public class getCov {
 //    job.setOutputKeyClass(Text.class);
 //    job.setOutputValueClass(IntWritable.class);
     job.setMapOutputKeyClass(Text.class);
-    job.setMapOutputValueClass(DoubleWritable.class);
+    job.setMapOutputValueClass(Text.class);
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
     System.exit(job.waitForCompletion(true) ? 0 : 1);
