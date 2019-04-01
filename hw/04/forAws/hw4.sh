@@ -3,10 +3,10 @@ export PATH=${JAVA_HOME}/bin:${PATH}:.
 export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
 # Number 3
-hadoop com.sun.tools.javac.Main getConv.java
-jar cvf gc.jar getConv*.class
+hadoop com.sun.tools.javac.Main getCov.java
+jar cvf gc.jar getCov*.class
 hadoop fs -copyFromLocal diabetes.csv .
-hadoop jar gc.jar getConv diabetes.csv output_hw3
+hadoop jar gc.jar getCov diabetes.csv output_hw3
 hadoop fs -getmerge ./output_hw3 ./result_hw3.txt
 
 #Number 4
