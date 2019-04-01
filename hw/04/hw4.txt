@@ -144,7 +144,7 @@ t1.	HDFS commands
             136666, male, single, nonsmoker, normal, no.
             14423, male, married, smoker, overweight, yes.
 		Problem:
-			Compute the gini index for each of the following at- tributes: gender, marital status, smoker, and weight class, based on the distribution of their class values.
+			Compute the gini index for each of the following attributes: gender, marital status, smoker, and weight class, based on the distribution of their class values.
 		Mapper function:
 			Tokenize each line into a set of columns.
 		Mapper output:
