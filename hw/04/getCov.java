@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -25,7 +26,7 @@ public class getCov {
       String[] line = value.toString().split(",");
 
       for (int x=0; x<line.length -2; x++){
-        for (int y=x+1; y<line.length-1; y++){
+        for (int y=x; y<line.length-1; y++){
           vals.set(line[x]+","+line[y]);
           atts.set(attributes[x]+","+attributes[y]);
           context.write(atts, vals );
@@ -37,19 +38,47 @@ public class getCov {
   public static class myReducer
        extends Reducer<Text,Text,Text,DoubleWritable> {
     private DoubleWritable result = new DoubleWritable();
+    private Text resultKey = new Text();
 
     public void reduce(Text key, Iterable<Text> values,
                        Context context
                        ) throws IOException, InterruptedException {
-      double sum = 0;
+      
+      ArrayList<Double> s1 = new ArrayList<Double>();
+      ArrayList<Double> s2 = new ArrayList<Double>();
+      String outKey;
+      double sumX = 0;
+      double sumY = 0;
+      double cnt = 0;
+      double x = 0;
+      double y = 0;
+
       for (Text val : values) {
         String[] row = val.toString().split(",");
-        for (int i=0; i<row.length; i++){
-          sum += Double.parseDouble(row[i]);
-        }
+        x = Double.parseDouble(row[0]);
+        y = Double.parseDouble(row[1]);
+        sumX += x;
+        sumY += y;
+        s1.add(x);
+        s2.add(y);
+        cnt++;
       }
-      result.set(sum);
-      context.write(key, result);
+
+      double xBar = sumX/cnt;
+      double yBar = sumY/cnt;
+
+      double cov = 0;
+
+      for (int i=0; i<s1.size(); i++){
+        cov += ((s1.get(i) - xBar)*(s2.get(i) - yBar));
+      }
+
+      cov /= (cnt - 1);
+      outKey = new String("("+key+")");
+
+      result.set(cov);
+      resultKey.set(outKey);
+      context.write(resultKey, result);
     }
   }
 
