@@ -4,6 +4,7 @@
 *.ipynb_checkpoints/
 *.pyc
 *.pptx
+*.docx
 config.py
 cse482.pem
 apriori/
