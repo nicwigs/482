@@ -1,4 +1,4 @@
-t1.	HDFS commands
+1.	HDFS commands
 	a.	hadoop fs -mkdir /user/hadoop
 	b.	hadoop fs -copyFromLocal patients.csv /user/Hadoop
 	c.	hadoop fs -mv /user/Hadoop/patients.csv /user/Hadoop/data.csv
@@ -74,7 +74,7 @@ t1.	HDFS commands
 		Mapper function 1:
 			Tokenize each line into a set of users. User and friends are individually grouped with the known friends, and friends of the user are grouped as unknown. Known friends are also added to the unknown friends list. 
 		Mapper output 1:
-			key is tuple of user and known or potential friend of friends, value is name of user that the key is or may be friends with, grouping only considered with original user (left most) and users to the right, see example in tom312 - mary is not added since she is to the left and is not the original user. 
+			key is tuple of user and known or potential friend of friends, value is name of user that the key is or may be friends with, grouping only considered with original user (left most) and users to the right, see example in tom312 - mary is not added since she is to the left and is not the original user. Some examples are below: 
 
 			((john123, known), mary456)
 			((john123, known), tom312)
@@ -100,12 +100,6 @@ t1.	HDFS commands
 			
 			((lee222, known),john123 )
 			((lee222, known),tom312 )
-
-
-
-
-
-
 
 		Reducer input 1:
 			key is tuple of user and wether friendship is known or potentially unknown, value is list of users that are the known friend or unknown friend.
