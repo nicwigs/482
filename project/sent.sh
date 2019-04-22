@@ -17,7 +17,7 @@ jar cvf sent.jar getSentiment*.class
 # reduces = number of reducers used
 # threshold is threshold to get threshold for important words, looks not implemented though.
 # ratio is ratio of class1/class2 in which we only store if above this ratio. 
-hadoop jar sent.jar getSentiment -D mapreduce.job.reduces=4 -D threshold=0 -D ratio=-1 train.data output
+hadoop jar sent.jar getSentiment -D mapreduce.job.reduces=4 -D threshold=10 -D ratio=-1 train.data output
 
 # view results
 hadoop fs -ls output
