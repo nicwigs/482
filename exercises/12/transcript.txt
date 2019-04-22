@@ -1,0 +1,8 @@
+lisa,sophomore,ECE,74
+joe,sophomore,CSE,78
+woo,freshman,ECE,77
+sue,freshman,CIVIL,95
+john,senior,CSE,85
+bill,junior,ECE,66
+mary,senior,CSE,87
+lee,junior,CIVIL,75

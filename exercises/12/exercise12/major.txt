@@ -1,0 +1,8 @@
+john,senior,CSE
+mary,senior,CSE
+bill,junior,ECE
+lee,junior,CIVIL
+lisa,sophomore,ECE
+joe,sophomore,CSE
+woo,freshman,ECE
+sue,freshman,CIVIL
