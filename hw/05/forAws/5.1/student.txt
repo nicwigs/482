@@ -1,0 +1,4 @@
+john,senior,cse
+mary,senior,cse
+bob,junior,ece
+lee,sophomore,ece

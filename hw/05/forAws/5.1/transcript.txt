@@ -1,0 +1,7 @@
+john,cse482,3.5
+john,cse335,3.5
+mary,cse482,3.5
+mary,cse335,4.0
+bob,cse335,2.5
+bob,cse232,3.0
+lee,cse335,3.5

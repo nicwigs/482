@@ -1,0 +1,47 @@
+ac/dc	25714
+air	29837
+amy winehouse	28252
+arctic monkeys	30387
+beck	26264
+björk	27110
+bloc party	26838
+bob dylan	31840
+coldplay	66738
+daft punk	33040
+david bowie	31907
+death cab for cutie	31515
+depeche mode	31966
+foo fighters	30177
+green day	28768
+iron maiden	25147
+johnny cash	26680
+kanye west	27052
+kings of leon	26369
+led zeppelin	32341
+linkin park	39833
+madonna	25497
+massive attack	28734
+metallica	45301
+moby	28269
+muse	47015
+nine inch nails	28982
+nirvana	39534
+oasis	25768
+pink floyd	44506
+placebo	32111
+portishead	28121
+queen	34215
+radiohead	77348
+rammstein	27199
+red hot chili peppers	48989
+sigur rós	28944
+system of a down	37324
+the beatles	76339
+the cure	32673
+the doors	25773
+the killers	41280
+the prodigy	25674
+the rolling stones	29801
+the smashing pumpkins	25370
+the white stripes	26273
+u2	33247

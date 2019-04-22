@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS question3b;
+CREATE TABLE question3b
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+AS
+	SELECT Artist as artist , AVG(NumPlays) as avg_numPlays
+	FROM Streaming
+	GROUP BY Artist;
+
