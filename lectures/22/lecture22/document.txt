@@ -1,4 +1,0 @@
-this is a sample document
-each line has a separate sentence
-this is the second last line
-this is the last line

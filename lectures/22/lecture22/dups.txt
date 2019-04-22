@@ -1,6 +1,0 @@
-john,85
-mary,87
-bill,66
-lee,75
-john,85
-mary,87
