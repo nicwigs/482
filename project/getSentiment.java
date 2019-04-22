@@ -54,19 +54,19 @@ public class getSentiment extends Configured implements Tool {
 			}
 		   }
 		   if (numPos > numNeg) {
-			sentimentVal = new String("positive,"+numPos+","+numNeg);
+			sentimentVal = new String("positive\t"+numPos+"\t"+numNeg);
 			ratioVal = numPos*1.0/(numNeg+0.000001);
 		   }
 		   else if (numNeg > numPos) {
-			sentimentVal = new String("negative,"+numPos+","+numNeg);
+			sentimentVal = new String("negative\t"+numPos+"\t"+numNeg);
 			ratioVal = numNeg*1.0/(numPos+0.000001);
 		   }
 		   else {
-			sentimentVal = new String("neutral,"+numPos+","+numNeg);
+			sentimentVal = new String("neutral\t"+numPos+"\t"+numNeg);
 			ratioVal = 1.0;
 		   }	
  
-		   if ((numPos + numNeg > 100) && (ratioVal > ratio)) {
+		   if ((numPos + numNeg > threshold) && (ratioVal > ratio)) {
 		      result.set(sentimentVal);
 		      c.write(key, result);
 		   }
