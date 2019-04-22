@@ -1,12 +1,8 @@
-# ignore .pdf
-*.pdf
 *.DS_Store
 *.ipynb_checkpoints/
 *.pyc
-*.pptx
 *.docx
+*apriori*
 config.py
-cse482.pem
-apriori/
 project/data/
 
